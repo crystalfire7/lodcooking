@@ -1,16 +1,26 @@
 fileFormatVersion: 2
-guid: 7374ee372b1754410b12952cab024b70
+guid: dbf1bc65ec5df4f01817f450998463e6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: 10330_Wooden_Cutting_Board_v1
+    100000: Cube_001
     100002: //RootNode
-    400000: 10330_Wooden_Cutting_Board_v1
+    100004: SlicedBread2
+    400000: Cube_001
     400002: //RootNode
-    2100000: 10330_Wooden_Cutting_Board_v1Mat
-    2300000: 10330_Wooden_Cutting_Board_v1
-    3300000: 10330_Wooden_Cutting_Board_v1
-    4300000: 10330_Wooden_Cutting_Board_v1
+    400004: SlicedBread2
+    2100000: Material_001__BreadCrust_jpg
+    2100002: Material_001__bread_jpg
+    2100004: Material_002__bread_jpg
+    2300000: Cube_001
+    2300002: SlicedBread2
+    3300000: Cube_001
+    3300002: SlicedBread2
+    4300000: SlicedBread2
+    4300002: Cube_001
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -64,7 +74,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -91,7 +101,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
