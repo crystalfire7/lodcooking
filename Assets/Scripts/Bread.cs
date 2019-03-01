@@ -6,6 +6,7 @@ public class Bread : MonoBehaviour, Grillable
 {
     public float grillTime = 0.0f;
     public bool grilling = false;
+    public bool stuck = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,10 @@ public class Bread : MonoBehaviour, Grillable
     public void Stop() {
         grilling = false;
     }
-
     void OnCollisionEnter(Collision collision) {
-        Debug.Log(collision.gameObject);
-        collision.gameObject.SendMessage("Stick", gameObject, SendMessageOptions.DontRequireReceiver);
+        if(!stuck) {
+            collision.gameObject.SendMessage("Stick", gameObject, SendMessageOptions.DontRequireReceiver);
+        }
     }
     void FixedUpdate() {
         if(grilling) {

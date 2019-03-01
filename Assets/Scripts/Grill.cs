@@ -13,13 +13,13 @@ public class Grill : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if(isOn) {
-            collision.gameObject.SendMessage("Grill", SendMessageOptions.DontRequireReceiver);
+            collision.gameObject.BroadcastMessage("Grill", SendMessageOptions.DontRequireReceiver);
         }
     }
 
     void OnCollisionExit(Collision collision) {
         if(isOn) {
-            collision.gameObject.SendMessage("Stop", SendMessageOptions.DontRequireReceiver);
+            collision.gameObject.BroadcastMessage("Stop", SendMessageOptions.DontRequireReceiver);
         }
     }
 }
