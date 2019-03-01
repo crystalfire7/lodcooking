@@ -5,16 +5,21 @@ using UnityEngine;
 public class Grill : MonoBehaviour
 {
     public bool isOn;
-    // Start is called before the first frame update
+
     void Start()
     {
-        isOn = false;
+        isOn = true;
     }
 
-    void OnTriggerStay(Collider collider) {
-        if(collider.gameObject.tag == "Grillable") {
-			Grillable g = collider.gameObject.GetComponent<Grillable>();
-			g.Grill();	
-		}
+    void OnCollisionEnter(Collision collision) {
+        if(isOn) {
+            collision.gameObject.SendMessage("Grill", SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+    void OnCollisionExit(Collision collision) {
+        if(isOn) {
+            collision.gameObject.SendMessage("Stop", SendMessageOptions.DontRequireReceiver);
+        }
     }
 }
