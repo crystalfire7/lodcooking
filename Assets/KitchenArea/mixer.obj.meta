@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 0009ba984ef5e493cbdeafb3f6a91af7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Stand_Mixer_basis
+    100004: Stand_Mixer_cup
+    100006: Stand_Mixer_fixer
+    100008: Stand_Mixer_fixer1
+    100010: Stand_Mixer_fixer2
+    100012: Stand_Mixer_fixer3
+    100014: Stand_Mixer_fixer4
+    100016: Stand_Mixer_fixer5
+    100018: Stand_Mixer_fixer6
+    100020: Stand_Mixer_fixer7
+    100022: Stand_Mixer_fixer8
+    100024: Stand_Mixer_fixer9
+    100026: Stand_Mixer_plug
+    100028: Stand_Mixer_protect
+    100030: Stand_Mixer_regulator1
+    100032: Stand_Mixer_regulator2
+    100034: Stand_Mixer_top
+    400000: //RootNode
+    400002: Stand_Mixer_basis
+    400004: Stand_Mixer_cup
+    400006: Stand_Mixer_fixer
+    400008: Stand_Mixer_fixer1
+    400010: Stand_Mixer_fixer2
+    400012: Stand_Mixer_fixer3
+    400014: Stand_Mixer_fixer4
+    400016: Stand_Mixer_fixer5
+    400018: Stand_Mixer_fixer6
+    400020: Stand_Mixer_fixer7
+    400022: Stand_Mixer_fixer8
+    400024: Stand_Mixer_fixer9
+    400026: Stand_Mixer_plug
+    400028: Stand_Mixer_protect
+    400030: Stand_Mixer_regulator1
+    400032: Stand_Mixer_regulator2
+    400034: Stand_Mixer_top
+    2100000: Stand_Mixer_basisMat
+    2100002: Stand_Mixer_cupMat
+    2100004: Stand_Mixer_fixerMat
+    2100006: Stand_Mixer_fixer1Mat
+    2100008: Stand_Mixer_fixer2Mat
+    2100010: Stand_Mixer_fixer3Mat
+    2100012: Stand_Mixer_fixer4Mat
+    2100014: Stand_Mixer_fixer5Mat
+    2100016: Stand_Mixer_fixer6Mat
+    2100018: Stand_Mixer_fixer7Mat
+    2100020: Stand_Mixer_fixer8Mat
+    2100022: Stand_Mixer_fixer9Mat
+    2100024: Stand_Mixer_plugMat
+    2100026: Stand_Mixer_protectMat
+    2100028: Stand_Mixer_regulator1Mat
+    2100030: Stand_Mixer_regulator2Mat
+    2100032: Stand_Mixer_topMat
+    2300000: Stand_Mixer_basis
+    2300002: Stand_Mixer_cup
+    2300004: Stand_Mixer_fixer
+    2300006: Stand_Mixer_fixer1
+    2300008: Stand_Mixer_fixer2
+    2300010: Stand_Mixer_fixer3
+    2300012: Stand_Mixer_fixer4
+    2300014: Stand_Mixer_fixer5
+    2300016: Stand_Mixer_fixer6
+    2300018: Stand_Mixer_fixer7
+    2300020: Stand_Mixer_fixer8
+    2300022: Stand_Mixer_fixer9
+    2300024: Stand_Mixer_plug
+    2300026: Stand_Mixer_protect
+    2300028: Stand_Mixer_regulator1
+    2300030: Stand_Mixer_regulator2
+    2300032: Stand_Mixer_top
+    3300000: Stand_Mixer_basis
+    3300002: Stand_Mixer_cup
+    3300004: Stand_Mixer_fixer
+    3300006: Stand_Mixer_fixer1
+    3300008: Stand_Mixer_fixer2
+    3300010: Stand_Mixer_fixer3
+    3300012: Stand_Mixer_fixer4
+    3300014: Stand_Mixer_fixer5
+    3300016: Stand_Mixer_fixer6
+    3300018: Stand_Mixer_fixer7
+    3300020: Stand_Mixer_fixer8
+    3300022: Stand_Mixer_fixer9
+    3300024: Stand_Mixer_plug
+    3300026: Stand_Mixer_protect
+    3300028: Stand_Mixer_regulator1
+    3300030: Stand_Mixer_regulator2
+    3300032: Stand_Mixer_top
+    4300000: Stand_Mixer_basis
+    4300002: Stand_Mixer_cup
+    4300004: Stand_Mixer_fixer
+    4300006: Stand_Mixer_fixer1
+    4300008: Stand_Mixer_fixer2
+    4300010: Stand_Mixer_fixer3
+    4300012: Stand_Mixer_fixer4
+    4300014: Stand_Mixer_fixer5
+    4300016: Stand_Mixer_fixer6
+    4300018: Stand_Mixer_fixer7
+    4300020: Stand_Mixer_fixer8
+    4300022: Stand_Mixer_fixer9
+    4300024: Stand_Mixer_plug
+    4300026: Stand_Mixer_protect
+    4300028: Stand_Mixer_regulator1
+    4300030: Stand_Mixer_regulator2
+    4300032: Stand_Mixer_top
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
