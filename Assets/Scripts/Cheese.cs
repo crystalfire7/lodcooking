@@ -10,6 +10,7 @@ public class Cheese : MonoBehaviour, Stickable
 
     GameObject bcRef;
     public void Stick(GameObject stickChild) {
+        Debug.Log("create" + numBread);
         //spawn merged prefab
         if(numBread == 0) {
             GameObject re = Instantiate(bc, stickChild.transform.position, stickChild.transform.rotation);
@@ -23,6 +24,7 @@ public class Cheese : MonoBehaviour, Stickable
             Destroy(stickChild);
             Destroy(bcRef);
             Instantiate(bcb, pos, rot);
+            Debug.Log("create2");
         }
     }
 

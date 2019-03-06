@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bread : MonoBehaviour, Grillable
 {
+    public Material grilled;
     public float grillTime = 0.0f;
     public bool grilling = false;
     public bool stuck = false;
@@ -22,8 +23,9 @@ public class Bread : MonoBehaviour, Grillable
         grilling = false;
     }
     void OnCollisionEnter(Collision collision) {
-        if(!stuck) {
-            collision.gameObject.SendMessage("Stick", gameObject, SendMessageOptions.DontRequireReceiver);
+        if(!stuck && collision.gameObject.tag == "Stickable") {
+            stuck = true;
+            collision.gameObject.BroadcastMessage("Stick", gameObject, SendMessageOptions.DontRequireReceiver);
         }
     }
     void FixedUpdate() {
@@ -31,7 +33,9 @@ public class Bread : MonoBehaviour, Grillable
             grillTime -= Time.deltaTime;
         }
         if(grillTime <= 0) {
-
+            var mats = GetComponent<Renderer>().materials;
+            mats[1] = grilled;
+            GetComponent<Renderer>().materials = mats;
         }
     }
 }

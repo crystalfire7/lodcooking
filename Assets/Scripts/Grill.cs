@@ -11,15 +11,16 @@ public class Grill : MonoBehaviour
         isOn = true;
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if(isOn) {
-            collision.gameObject.BroadcastMessage("Grill", SendMessageOptions.DontRequireReceiver);
+    void OnTriggerEnter(Collider collider) {
+        if(isOn && collider.gameObject.tag == "Grillable") {
+            Debug.Log(collider.gameObject);
+            collider.gameObject.BroadcastMessage("Grill", SendMessageOptions.DontRequireReceiver);
         }
     }
 
-    void OnCollisionExit(Collision collision) {
-        if(isOn) {
-            collision.gameObject.BroadcastMessage("Stop", SendMessageOptions.DontRequireReceiver);
+    void OnTriggerExit(Collider collider) {
+        if(isOn && collider.gameObject.tag == "Grillable") {
+            collider.gameObject.BroadcastMessage("Stop", SendMessageOptions.DontRequireReceiver);
         }
     }
 }

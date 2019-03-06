@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour {
 			return instance;
 		}
 	}
-
 	Grill grill;
 	Timer timer;
 
 	void Awake () {
+		if(instance != null && instance != this) {
+			Destroy(this.gameObject);
+		} else {
+			instance = this;
+		}
 		grill = GameObject.FindGameObjectWithTag("Grill").GetComponent<Grill>();
 		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 	}
@@ -32,8 +36,12 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadScene("Start");
 		}
 		if(timer.timeUp) {
-			//if timer runs out, play fail sound and prefab
-			SceneManager.LoadScene("Start");
+			//if timer runs out, play timer sound and prefab
+			endGame();
 		}
+	}
+
+	public void endGame() {
+		SceneManager.LoadScene("Start");
 	}
 }
