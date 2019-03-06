@@ -25,6 +25,7 @@ public class Cheese : MonoBehaviour, Stickable
             Destroy(bcRef);
             Instantiate(bcb, pos, rot);
             Debug.Log("create2");
+            GameManager.Instance.RecipeObj.finishStack();
         }
     }
 

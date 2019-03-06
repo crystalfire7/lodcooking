@@ -8,6 +8,7 @@ public class Bread : MonoBehaviour, Grillable
     public float grillTime = 0.0f;
     public bool grilling = false;
     public bool stuck = false;
+    public bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +33,12 @@ public class Bread : MonoBehaviour, Grillable
         if(grilling) {
             grillTime -= Time.deltaTime;
         }
-        if(grillTime <= 0) {
+        if(grillTime <= 0 && !finished) {
+            finished = true;
             var mats = GetComponent<Renderer>().materials;
             mats[1] = grilled;
             GetComponent<Renderer>().materials = mats;
+            GameManager.Instance.RecipeObj.finishGrill();
         }
     }
 }

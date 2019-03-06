@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	}
 	Grill grill;
 	Timer timer;
+	Recipe recipe;
 
 	void Awake () {
 		if(instance != null && instance != this) {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
 		}
 		grill = GameObject.FindGameObjectWithTag("Grill").GetComponent<Grill>();
 		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+		recipe = GameObject.FindGameObjectWithTag("Recipe").GetComponent<Recipe>();
 	}
 
 	public Grill GrillObj {
@@ -29,12 +31,20 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public Timer TimerObj {
+		get {
+			return timer;
+		}
+	}
+
+	public Recipe RecipeObj {
+		get {
+			return recipe;
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if(false /* cooking check */) {
-			//if all cooking items complete, play victory sound and screen prefab
-			SceneManager.LoadScene("Start");
-		}
 		if(timer.timeUp) {
 			//if timer runs out, play timer sound and prefab
 			endGame();
@@ -42,6 +52,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void endGame() {
-		SceneManager.LoadScene("Start");
+		if(recipe.isDone()) {
+			//win ui
+			Debug.Log("win");
+			SceneManager.LoadScene("Start");
+		} else {
+			//fail ui
+			SceneManager.LoadScene("Start");
+		}
 	}
 }
