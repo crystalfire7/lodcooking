@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         time = GetComponent<Text>();
-        timeLeft = 100;
+        timeLeft = 5;
     }
 
     // Update is called once per frame

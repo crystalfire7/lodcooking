@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	Grill grill;
 	Timer timer;
 	Recipe recipe;
-
+	Animator animator;
 	void Awake () {
 		if(instance != null && instance != this) {
 			Destroy(this.gameObject);
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 		grill = GameObject.FindGameObjectWithTag("Grill").GetComponent<Grill>();
 		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 		recipe = GameObject.FindGameObjectWithTag("Recipe").GetComponent<Recipe>();
+		animator = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
 	}
 
 	public Grill GrillObj {
@@ -52,13 +53,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void endGame() {
-		if(recipe.isDone()) {
+		StartCoroutine(SwitchScene());
+		/* if(recipe.isDone()) {
 			//win ui
 			Debug.Log("win");
 			SceneManager.LoadScene("Start");
 		} else {
 			//fail ui
 			SceneManager.LoadScene("Start");
-		}
+		}*/
+	}
+
+	IEnumerator SwitchScene() {
+		animator.SetTrigger("SwitchScene");
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadScene("Start");
 	}
 }
