@@ -21,7 +21,7 @@ public class RecipeText : MonoBehaviour
 
     void Update()
     {
-        string display = "TO DO: \n\n";
+        string display = "";
         List<string> taskList = GameManager.Instance.RecipeObj.tasks;
         foreach (string task in taskList) {
             display += taskToInstruction(task) + "\n\n";
@@ -30,10 +30,10 @@ public class RecipeText : MonoBehaviour
     }
     public string taskToInstruction(string task) {
         if(task == "stack" && isGrilledCheese) {
-            return "Stack the ingredients in the following order from bottom to top: bread, cheese, bread.";
+            return "- Stack the ingredients in the following order from bottom to top: bread, cheese, bread.";
         }
         if(task == "grill" && isGrilledCheese) {
-            return "Grill the sandwich for 10 seconds.";
+            return "- Grill the sandwich for 10 seconds.";
         }
         return "";
     }

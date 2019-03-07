@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
     {
         if(timeLeft > 0) {
             timeLeft = Mathf.Clamp(timeLeft - Time.deltaTime, 0, timeLeft);
-            time.text = "" + (int) Mathf.Floor(timeLeft);
+            time.text = "Time Left: " + (int) Mathf.Floor(timeLeft);
         } else {
             timeUp = true;
         }
