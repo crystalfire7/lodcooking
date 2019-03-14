@@ -16,6 +16,18 @@ public class Recipe : MonoBehaviour
             tasks.Remove("grill");
         }
     }
+    
+    public void finishFry() {
+        if(tasks.Contains("fry")) {
+            tasks.Remove("fry");
+        }
+    }
+
+    public void finishChop() {
+        if(tasks.Contains("cut")) {
+            tasks.Remove("cut");
+        }
+    }
 
     public bool isDone() {
         return tasks.Count == 0;

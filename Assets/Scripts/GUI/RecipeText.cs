@@ -7,6 +7,7 @@ public class RecipeText : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isGrilledCheese;
+    public bool isFries;
     Text instructions;
     void Start()
     {
@@ -34,6 +35,12 @@ public class RecipeText : MonoBehaviour
         }
         if(task == "grill" && isGrilledCheese) {
             return "- Grill the sandwich for 10 seconds.";
+        }
+        if(task == "fry" && isFries) {
+            return "- Grill the fries for 10 seconds.";
+        }
+        if(task == "cut" && isFries) {
+            return "- Cut 10 fries from your potato.";
         }
         return "";
     }
