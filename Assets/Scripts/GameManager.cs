@@ -10,11 +10,16 @@ public class GameManager : MonoBehaviour {
 			return instance;
 		}
 	}
+
+	public GameObject victoryPrefab;
+	public GameObject defeatPrefab;
+	public bool ended;
 	Grill grill;
 	Timer timer;
 	Recipe recipe;
 	Animator animator;
 	void Awake () {
+		ended = false;
 		if(instance != null && instance != this) {
 			Destroy(this.gameObject);
 		} else {
@@ -46,25 +51,29 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(timer.timeUp) {
+		if((recipe.isDone() || timer.timeUp) && !ended) {
 			//if timer runs out, play timer sound and prefab
 			endGame();
 		}
 	}
 
 	public void endGame() {
-		StartCoroutine(SwitchScene());
-		/* if(recipe.isDone()) {
+		if(recipe.isDone()) {
 			//win ui
-			Debug.Log("win");
-			SceneManager.LoadScene("Start");
+			ended = true;
+			Instantiate(victoryPrefab, new Vector3(0.03142f, 1.60144f, -1.184f), Quaternion.Euler(0, -90, 0));
+			StartCoroutine(SwitchScene());
 		} else {
+			ended = true;
 			//fail ui
-			SceneManager.LoadScene("Start");
-		}*/
+			Instantiate(defeatPrefab, new Vector3(0.03142f, 1.60144f, -1.184f), Quaternion.Euler(0, -90, 0));
+			StartCoroutine(SwitchScene());
+		}
+		
 	}
 
 	IEnumerator SwitchScene() {
+		yield return new WaitForSeconds(4);
 		animator.SetTrigger("SwitchScene");
 		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene("Start");
