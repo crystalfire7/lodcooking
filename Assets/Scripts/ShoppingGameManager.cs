@@ -12,12 +12,30 @@ public class ShoppingGameManager : MonoBehaviour {
 		}
 	}
 
+	public GameObject victoryPrefab;
+	public GameObject defeatPrefab;
 	Timer timer;
     Bag bag;
 	void Awake () {
+		if(instance != null && instance != this) {
+			Destroy(this.gameObject);
+		} else {
+			instance = this;
+		}
         timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         bag = GameObject.FindGameObjectWithTag("Basket").GetComponent<Bag>();
     }
+	public Timer TimerObj {
+		get {
+			return timer;
+		}
+	}
+
+	public Bag BagObj {
+		get {
+			return bag;
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
