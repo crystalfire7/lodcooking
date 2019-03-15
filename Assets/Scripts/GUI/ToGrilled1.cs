@@ -9,6 +9,6 @@ public class ToGrilled1 : MonoBehaviour, IColliderEventHoverEnterHandler
 {
     public void OnColliderEventHoverEnter(ColliderHoverEventData eventData)
     {
-        SceneManager.LoadScene("Shopping1");
+        SceneManager.LoadScene("Shopping 1");
     }
 }
