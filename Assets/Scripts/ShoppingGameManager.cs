@@ -12,14 +12,15 @@ public class ShoppingGameManager : MonoBehaviour {
 	}
 
 	Timer timer;
-
+    Bag bag;
 	void Awake () {
-		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
-	}
+        timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        bag = GameObject.FindGameObjectWithTag("Basket").GetComponent<Bag>();
+    }
 
 	// Update is called once per frame
 	void Update () {
-		if(false /* bag check */) {
+		if(bag.isDone) {
 			//if bag contains all items, play victory sound and screen prefab
 			SceneManager.LoadScene("Kitchen");
 		}

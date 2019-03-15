@@ -5,44 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class Bag : MonoBehaviour
 {
-    private int BreadNumber = 0;
-    private int CheeseNumber = 0;
-    private int OrangeNumber = 0;
+    public List<string> inBag;
+    public List<string> needed;
+    public bool isDone = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        isDone = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        void OnTriggerEnter(Collider other) {
-
-            if (other.tag == "Bread")
-            {
-                BreadNumber += 1;
-                Destroy(other.gameObject);
-                Debug.Log("Bread was placed in the basket");
-            }
-            if (other.tag == "Cheese")
-            {
-                CheeseNumber += 1;
-                Destroy(other.gameObject);
-                Debug.Log("Cheese was placed in the basket");
-            }
-
-        }
-
-        if (OrangeNumber > 0)
+        List<string> temp = new List<string>(needed);
+        foreach(string item in inBag)
         {
-            SceneManager.LoadScene("Shopping");
+            temp.Remove(item);
         }
-        if (BreadNumber == 2 && CheeseNumber == 1){
-            SceneManager.LoadScene("Kitchen");
+        if (temp.Count == 0)
+        {
+            isDone = true;
         }
-        
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        string name = LayerMask.LayerToName(other.gameObject.layer);
+        if (name == "Food")
+        {
+            inBag.Add(other.tag);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        string name = LayerMask.LayerToName(other.gameObject.layer);
+        if (name == "Food")
+        {
+            inBag.Remove(other.tag);
+        }
     }
 }
