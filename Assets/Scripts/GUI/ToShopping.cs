@@ -10,12 +10,10 @@ public class ToShopping : MonoBehaviour, IColliderEventHoverEnterHandler
     public string shoppingScene;
     public void OnColliderEventHoverEnter(ColliderHoverEventData eventData)
     {
-        StartCoroutine(SwitchScene());
+        SwitchScene();
     }
 
-    IEnumerator SwitchScene() {
-		StartManager.Instance.AnimatorObj.SetTrigger("SwitchScene");
-		yield return new WaitForSeconds(2);
+    public void SwitchScene() {
 		SceneManager.LoadScene(shoppingScene);
 	}
 }
