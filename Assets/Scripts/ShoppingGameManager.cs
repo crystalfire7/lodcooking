@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ShoppingGameManager : MonoBehaviour {
 	private static ShoppingGameManager instance;
+    public string kitchenName;
 	public static ShoppingGameManager Instance {
 		get {
 			return instance;
@@ -22,7 +23,7 @@ public class ShoppingGameManager : MonoBehaviour {
 	void Update () {
 		if(bag.isDone) {
 			//if bag contains all items, play victory sound and screen prefab
-			SceneManager.LoadScene("Kitchen");
+			SceneManager.LoadScene(kitchenName);
 		}
 		if(timer.timeUp) {
 			//if timer runs out, and bag doesnt have all items, play fail sound and prefab
