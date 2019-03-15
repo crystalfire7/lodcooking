@@ -21,6 +21,8 @@ TagManager:
   - Pine
   - Melon
   - Basket
+  - Potato
+  - Fries
   layers:
   - Default
   - TransparentFX
