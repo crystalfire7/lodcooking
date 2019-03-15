@@ -2008,9 +2008,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719615651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b0401c873b1714c994e6933b4017f6, type: 3}
+  m_Script: {fileID: 11500000, guid: d6ae7c9e73b9f7848ae93eb1cc4f197b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoppingScene: Shopping 1
 --- !u!1 &1733885894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,9 +2361,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2093739251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59d70da0449131c47a0f5dfad3cf5426, type: 3}
+  m_Script: {fileID: 11500000, guid: d6ae7c9e73b9f7848ae93eb1cc4f197b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoppingScene: Shopping
 --- !u!1 &2098645047
 GameObject:
   m_ObjectHideFlags: 0

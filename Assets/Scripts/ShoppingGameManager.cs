@@ -16,6 +16,8 @@ public class ShoppingGameManager : MonoBehaviour {
 	public GameObject defeatPrefab;
 	Timer timer;
     Bag bag;
+	Animator animator;
+	public bool ended = false;
 	void Awake () {
 		if(instance != null && instance != this) {
 			Destroy(this.gameObject);
@@ -24,6 +26,7 @@ public class ShoppingGameManager : MonoBehaviour {
 		}
         timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         bag = GameObject.FindGameObjectWithTag("Basket").GetComponent<Bag>();
+		animator = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
     }
 	public Timer TimerObj {
 		get {
@@ -39,12 +42,34 @@ public class ShoppingGameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(bag.isDone) {
-			//if bag contains all items, play victory sound and screen prefab
-			SceneManager.LoadScene(kitchenName);
+		if((bag.isDone || timer.timeUp) && !ended) {
+			//if timer runs out, play timer sound and prefab
+			endGame();
 		}
-		if(timer.timeUp) {
-			//if timer runs out, and bag doesnt have all items, play fail sound and prefab
+	}
+
+	public void endGame() {
+		if(bag.isDone) {
+			//win ui
+			ended = true;
+			Instantiate(victoryPrefab, new Vector3(0.03142f, 1.60144f, -1.107f), Quaternion.Euler(0, -90, 0));
+			StartCoroutine(SwitchScene());
+		} else {
+			ended = true;
+			//fail ui
+			Instantiate(defeatPrefab, new Vector3(0.03142f, 1.60144f, -1.107f), Quaternion.Euler(0, -90, 0));
+			StartCoroutine(SwitchScene());
+		}
+		
+	}
+
+	IEnumerator SwitchScene() {
+		yield return new WaitForSeconds(2);
+		animator.SetTrigger("SwitchScene");
+		yield return new WaitForSeconds(2);
+		if(bag.isDone) {
+			SceneManager.LoadScene(kitchenName);
+		} else {
 			SceneManager.LoadScene("Start");
 		}
 	}
